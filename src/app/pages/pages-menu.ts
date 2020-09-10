@@ -1,6 +1,25 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
+
+  {
+    title: 'PHASE ONE',
+    group: true,
+  },
+  {
+    title: 'Master Customer',
+    icon: 'people',
+    children: [
+      {
+        title: 'Add Master Csutomer',
+        link: '/pages/mastercustomer/addMasterCustomer',
+      },
+      {
+        title: 'List Master Csutomer',
+        link: '/pages/mastercustomer/listMasterCustomer',
+      },
+    ],
+  },
   {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
@@ -11,10 +30,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'IoT Dashboard',
     icon: 'home-outline',
     link: '/pages/iot-dashboard',
-  },
-  {
-    title: 'FEATURES',
-    group: true,
   },
   {
     title: 'Layout',
@@ -226,6 +241,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+
   {
     title: 'Auth',
     icon: 'lock-outline',

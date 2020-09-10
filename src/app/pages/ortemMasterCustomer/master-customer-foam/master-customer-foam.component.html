@@ -1,0 +1,187 @@
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-header>
+                <div class="row">
+                    <div class="col-sm-8">
+                        Master Customer
+                    </div>
+                    <div class="col-sm-2 fieldMargin">
+                        <button (click)="submitClick()" style="width: 100%;" status="success" hero nbButton>
+                            Save
+                        </button>
+                    </div>
+                    <div class="col-sm-2 fieldMargin">
+                        <button (click)="reset()" style="width: 100%;" status="primary" hero nbButton>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </nb-card-header>
+            <nb-card-body>
+
+                <form class="form" [formGroup]="formGroup">
+
+
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="masterCustomerID" type="text" nbInput fullWidth disabled
+                                placeholder="Master Customer ID">
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="date" type="text" nbInput fullWidth disabled placeholder="Date">
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="companyName" type="text" nbInput fullWidth
+                                placeholder="Company Name *">
+                            <p class="error"
+                                *ngIf="!formGroup.controls.companyName.valid && (formGroup.controls.companyName.dirty || submitAttempt)">
+                                Company name required</p>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="ownerName" type="text" nbInput fullWidth placeholder="Owner Name *">
+                            <p class="error"
+                                *ngIf="!formGroup.controls.ownerName.valid && (formGroup.controls.ownerName.dirty || submitAttempt)">
+                                Owner name required</p>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="cnic" type="number" nbInput fullWidth placeholder="CNIC *">
+                            <p class="error"
+                                *ngIf="!formGroup.controls.cnic.valid && (formGroup.controls.cnic.dirty || submitAttempt)">
+                                Nic required</p>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="ntn" type="number" nbInput fullWidth placeholder="NTN">
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="email" type="email" nbInput fullWidth placeholder="Email *">
+                            <p class="error"
+                                *ngIf="!formGroup.controls.email.valid && (formGroup.controls.email.dirty || submitAttempt)">
+                                email required</p>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="number" type="number" nbInput fullWidth
+                                placeholder="Phone Number *">
+                            <p class="error"
+                                *ngIf="!formGroup.controls.number.valid && (formGroup.controls.number.dirty || submitAttempt)">
+                                Phone Number required</p>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="alternateNumber" type="number" nbInput fullWidth
+                                placeholder="Alternate mobile number">
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="dob" class="clDatePicker" nbInput placeholder="DOB *"
+                                [nbDatepicker]="DOBpicker">
+                            <nb-datepicker #DOBpicker></nb-datepicker>
+                            <p class="error"
+                                *ngIf="!formGroup.controls.dob.valid && (formGroup.controls.dob.dirty || submitAttempt)">
+                                D-O-B required</p>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="userName" type="text" nbInput fullWidth placeholder="Username *">
+                            <p class="error"
+                                *ngIf="!formGroup.controls.userName.valid && (formGroup.controls.userName.dirty || submitAttempt)">
+                                User name required</p>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="password" type="password" nbInput fullWidth
+                                placeholder="Password *">
+                            <p class="error"
+                                *ngIf="!formGroup.controls.password.valid && (formGroup.controls.password.dirty || submitAttempt)">
+                                passwordrequired</p>
+                            <!-- <p class="error"
+                                *ngIf="!formGroup.controls.password.valid && (formGroup.controls.password.dirty || submitAttempt)">
+                                password Length</p> -->
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="natureOfBusiness" type="text" nbInput fullWidth
+                                placeholder="Nature of business *">
+                            <p class="error"
+                                *ngIf="!formGroup.controls.natureOfBusiness.valid && (formGroup.controls.natureOfBusiness.dirty || submitAttempt)">
+                                Nature of busines</p>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <input formControlName="webSite" type="text" nbInput fullWidth placeholder="Website">
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-sm-6 col-lg-6 col-xl-6 col-xxxl-6 fieldMargin">
+                            <nb-select formControlName="country" style="width: 100%;">
+                                <nb-option value="0" disabled>Country</nb-option>
+                                <nb-option value="1">Pakistan</nb-option>
+                            </nb-select>
+                            <p class="error"
+                                *ngIf="formGroup.controls.country.value == 0 && (formGroup.controls.country.dirty || submitAttempt)">
+                                Country required</p>
+                        </div>
+                        <div class="col-sm-6 col-xl-6 col-xxxl-6 fieldMargin">
+                            <nb-select formControlName="city" style="width: 100%;">
+                                <nb-option value="0" disabled>City</nb-option>
+                                <nb-option value="1">Karachi</nb-option>
+                                <nb-option value="1">Lahore</nb-option>
+                                <nb-option value="1">Islamabad</nb-option>
+                            </nb-select>
+                            <p class="error"
+                                *ngIf="formGroup.controls.city.value == 0 && (formGroup.controls.city.dirty || submitAttempt)">
+                                City required</p>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row ">
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                            <nb-checkbox formControlName="isActive" [value]="false">IsActive</nb-checkbox>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row ">
+                        <div class="col-sm-12 col-lg-12 col-xl-12 fieldMargin">
+                            <textarea formControlName="address" rows="5" nbInput fullWidth
+                                placeholder="Address *"></textarea>
+                            <p class="error"
+                                *ngIf="!formGroup.controls.address.valid && (formGroup.controls.address.dirty || submitAttempt)">
+                                Address required</p>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-xl-6 fieldMargin">
+                        </div>
+                    </div>
+
+                </form>
+
+                <!-- <form [formGroup]="formGroup">
+                    <input formControlName="Name" type="password" nbInput fullWidth placeholder="Password">
+                    <input type="text" nbInput fullWidth shape="rectangle" placeholder="Rectangle border">
+                    <input type="text" nbInput fullWidth shape="semi-round" placeholder="Semi-round border">
+                    <input type="text" nbInput fullWidth shape="round" placeholder="Rounded border">
+                    <input type="text" nbInput fullWidth placeholder="Disabled input" disabled />
+                    <textarea rows="5" nbInput fullWidth shape="round" placeholder="Text Area"></textarea>
+                    <input type="text" nbInput fullWidth fieldSize="small" placeholder="Small Input">
+                    <input type="text" nbInput fullWidth fieldSize="medium" placeholder="Medium Input">
+                    <input type="text" nbInput fullWidth fieldSize="large" placeholder="Large Input">
+                </form> -->
+            </nb-card-body>
+        </nb-card>
+    </div>

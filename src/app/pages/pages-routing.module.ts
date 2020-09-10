@@ -69,6 +69,11 @@ const routes: Routes = [{
         .then(m => m.MiscellaneousModule),
     },
     {
+      path: 'mastercustomer',
+      loadChildren: () => import('./ortemMasterCustomer/masterCustomer.module')
+        .then(m => m.MasterCustomerModule),
+    },
+    {
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full',

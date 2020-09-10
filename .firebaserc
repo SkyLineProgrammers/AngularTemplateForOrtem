@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "Ortem": "ortemsaas",
+    "default": "ortemsaas"
+  }
+}
